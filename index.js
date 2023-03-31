@@ -92,7 +92,7 @@ export default function(opts){
     }
 
     getSlots(){
-      const namedSlots = this.querySelectorAll('[slot]')
+      const namedSlots = this.querySelectorAll('[slot]:not([slot] [slot])')
       let slots = {}
       namedSlots.forEach(n=>{
         slots[n.slot] = this.unwrap(n)
